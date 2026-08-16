@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/1335994787.svg)](https://doi.org/10.5281/zenodo.21970976)
 # 🫁 Oxygen
 
 > **Air-Gapped, Local AI-Powered Security Logic & Cryptography Analyzer**
