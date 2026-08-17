@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/1335994787.svg)](https://doi.org/10.5281/zenodo.21970976)
-# 🫁 Oxygen
+#  Oxygen
 
 > **Air-Gapped, Local AI-Powered Security Logic & Cryptography Analyzer**
 
@@ -7,7 +7,7 @@ O **Oxygen** é uma ferramenta de linha de comando (CLI) focada em privacidade p
 
 ---
 
-## ⚡ Principais Recursos
+## Principais Recursos
 
 * **Privacidade Absoluta (Air-Gapped):** Todo o processamento ocorre no hardware local. Nenhum trecho de código-fonte é enviado para APIs de nuvem.
 * **Motor Híbrido (AST + IA):** Mapeia a estrutura sintática do código via *Tree-sitter* e aciona o modelo local apenas nos pontos críticos.
@@ -17,7 +17,7 @@ O **Oxygen** é uma ferramenta de linha de comando (CLI) focada em privacidade p
 
 ---
 
-## 🏗️ Arquitetura do Sistema
+##  Arquitetura do Sistema
 
 ```text
   [ Código-Fonte do Usuário ]
