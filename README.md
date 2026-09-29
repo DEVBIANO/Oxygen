@@ -8,7 +8,7 @@
 
 Oxygen é uma ferramenta de infraestrutura para **análise estática de código e correção automatizada de vulnerabilidades**, desenhada para operar **100% offline**, em **CPU comum** (sem GPU dedicada), voltada a ambientes air-gapped de alta segurança (governo, defesa, setor bancário).
 
-O ineditismo está mais em “Rust é mais rápido que Python” — está na combinação específica de quatro propriedades que, juntas, nenhuma ferramenta hoje no mercado entrega de forma Clara:
+O ineditismo está na combinação específica de quatro propriedades que, juntas, nenhuma ferramenta hoje no mercado entrega de forma Clara:
 
 1. Correção automatizada (não só detecção/triagem)
 2. Multi-linguagem via AST (não travada a uma linguagem, como Bandit é a Python)
