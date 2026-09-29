@@ -112,9 +112,9 @@ Segue de perto o modelo de gerenciamento de patches para redes segmentadas descr
 4. O Oxygen **verifica a assinatura** antes de aceitar o pacote. Assinatura inválida → atualização recusada.
 5. O modelo de correção (SLM) **não participa desse processo** — continua o mesmo, sem necessidade de retraining ou reconexão.
 
-# 5. Por que Rust (argumento corrigido)
+# 5. Por que Rust ?
 
-O ineditismo não é mais “Rust reduz a memória do modelo” — isso foi corrigido depois da revisão técnica. Os dois argumentos válidos que sustentam a escolha de Rust são:
+Os dois argumentos válidos que sustentam a escolha de Rust são:
 
 - **Overhead da camada de ferramentas, não do modelo:** o parsing via Tree-sitter, a orquestração do loop de validação e a manipulação de AST rodam com menos overhead e menos memória em Rust do que rodariam em Python — o que importa porque, num cenário de CPU compartilhada com o SLM, cada MB e cada ciclo de CPU que a ferramenta economiza sobra para a inferência do modelo. (Caso real de referência: migração de um analisador estático de Java para Rust, 3x mais performance e 10x menos memória.)
 - **Segurança de memória formalmente provada (RustBelt):** uma ferramenta que corrige vulnerabilidades de segurança não pode, ela mesma, introduzir uma nova superfície de ataque por bugs de memória (buffer overflow, use-after-free). O RustBelt oferece a primeira prova formal e verificada por máquina de que o sistema de tipos do Rust garante ausência desse tipo de falha — um argumento de confiabilidade da ferramenta, não de velocidade.
