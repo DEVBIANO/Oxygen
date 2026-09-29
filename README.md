@@ -2,13 +2,13 @@
 #  Oxygen
 
 > **Air-Gapped, Local AI-Powered Security Logic & Cryptography Analyzer**
-# Oxygen — Arquitetura e Fundamentação Técnica (v2)
+# Oxygen — Arquitetura e Fundamentação Técnica (V1)
 
 # 1. Visão geral
 
 Oxygen é uma ferramenta de infraestrutura para **análise estática de código e correção automatizada de vulnerabilidades**, desenhada para operar **100% offline**, em **CPU comum** (sem GPU dedicada), voltada a ambientes air-gapped de alta segurança (governo, defesa, setor bancário).
 
-Diferente da v1 da proposta, o ineditismo não está mais em “Rust é mais rápido que Python” — está na combinação específica de quatro propriedades que, juntas, nenhuma ferramenta hoje no mercado entrega:
+O ineditismo está mais em “Rust é mais rápido que Python” — está na combinação específica de quatro propriedades que, juntas, nenhuma ferramenta hoje no mercado entrega de forma Clara:
 
 1. Correção automatizada (não só detecção/triagem)
 2. Multi-linguagem via AST (não travada a uma linguagem, como Bandit é a Python)
@@ -135,15 +135,7 @@ A literatura recente já demonstra que SLMs de código (1.5B–3B parâmetros) q
 | Atualização de regras | Pacotes assinados, transferência por mídia controlada (alinhado ao NIST SP 800-40) |
 | Interface | CLI |
 
-# 8. Escopo da Prova de Conceito (PIBIC)
-
-Para tornar o projeto tangível e mensurável dentro do prazo de uma iniciação científica, a PoC cobre **um único CWE bem definido de ponta a ponta**:
-
-- **CWE-89 (SQL Injection)** — detecção via regra Tree-sitter → extração de micro-contexto → correção via SLM local → validação sintática → relatório.
-- **Dataset de validação:** subconjunto do Juliet Test Suite ou OWASP Benchmark focado em CWE-89, para medir precisão de detecção e taxa de sucesso de correção com dados públicos e comparáveis.
-- **Métricas a coletar:** taxa de patches que passam na validação sintática vs. que exigiriam revisão manual; throughput (tokens/s) e latência por sugestão em CPU comum; uso de memória do pipeline completo.
-
-# 9. Limitações conhecidas e mitigações
+# 8. Limitações conhecidas e mitigações
 
 Nenhuma arquitetura resolve tudo de uma vez. As limitações abaixo foram identificadas propositalmente, para que o texto da proposta as reconheça em vez de deixá-las como pontos cegos.
 
@@ -157,7 +149,7 @@ Nenhuma arquitetura resolve tudo de uma vez. As limitações abaixo foram identi
 
 **Gestão de chaves do mecanismo de atualização.** O modelo de atualização offline (seção 4) resolve o “como” transferir regras com segurança, mas pressupõe uma infraestrutura de chaves (PKI) já gerenciada pela instituição cliente — gestão de chaves em si segue práticas padrão de PKI institucional e não é foco da pesquisa.
 
-## 10. Trabalhos relacionados (posicionamento)
+## 9. Trabalhos relacionados (posicionamento)
 
 | Trabalho | O que faz | Onde o Oxygen se diferencia |
 | --- | --- | --- |
@@ -167,7 +159,7 @@ Nenhuma arquitetura resolve tudo de uma vez. As limitações abaixo foram identi
 | VulnHunter | Scanner offline multi-linguagem com triagem via LLM local | Faz triagem (avalia exploitabilidade), não gera correção — e é escrito em Python |
 | cargo-cola | Auditoria de dependências Rust com LLM-assisted triage | Escopo restrito a crates Rust; no modo air-gapped não roda o LLM |
 
-# 11. Próximos passos
+# 10. Próximos passos
 
 1. Implementar o parser + motor de regras para CWE-89
 2. Integrar llama-cpp-rs com um modelo quantizado de 1.5B–3B
